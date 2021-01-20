@@ -1,0 +1,28 @@
+<!--pages/com_pub/com_pub.wxml-->
+<view class='page'>
+    <!--下拉-->
+  <view class='top' bindtap='bindShowMsg'>
+   <text>{{grade_name}}</text>
+  </view>
+  <!-- 下拉需要显示的列表 -->
+  <view class="select_box" wx:if="{{select}}"style="position: absolute;z-index:2">
+   <view wx:for="{{grades}}" wx:key="unique">
+    <view class="select_one" bindtap="mySelect" data-name="{{item}}">{{item}}</view>
+   </view>
+  </view>
+
+  <!--文字部分-->
+  <view class='text'> 
+  <textarea  bindinput="Shareinput" placeholder="分享动态"style="position: absolute;z-index:1"></textarea>
+</view>
+  <view class="image_content">
+    <view class='image' wx:for="{{img_url}}">
+      <image class="moment_img" src='{{item}}' bindlongpress="deleteImage" bindtap="listenerButtonPreviewImage" data-index="{{index}}" mode='widthFix'/>
+    </view>
+  <view class='image' style='display:{{hideAdd?"none":"block"}}'>
+      <image bindtap="chooseimage" class="moment_img" src='../../image/pic.png'></image>
+  </view>
+</view>
+  <!--发布按钮-->
+  <button class='button' bindtap="send">发布</button>
+</view>

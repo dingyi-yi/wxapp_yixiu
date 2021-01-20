@@ -1,0 +1,81 @@
+/**index.wxss**/
+.header_view_hide{
+  display: none;
+}
+.header_view_show{
+  display: block;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.button {
+  display: block;
+  margin-top: 200px;
+  margin-left: 100px;
+  border-radius: 0px;
+  color: #27A036;
+}
+/**index.wxss**/
+.texts1{
+  color: rgb(132, 192, 241);
+  text-align: center;
+  line-height:30px;   
+  
+}
+.caidan{
+  border: 1px solid silver;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  
+  
+}
+
+.textStyle02{
+  text-align: justify;
+  word-spacing :20px;
+  text-transform: uppercase;
+  white-space: pre-wrap;
+}
+.waikuang{
+  display:flex;
+  flex-direction:row;
+  margin:5px 0px;
+  padding:5px 0px;
+}
+.box{
+  border: 1px solid silver;
+  margin: 20rpx;
+  padding: 20rpx;
+}
+
+.ibox{
+  border: 1px solid silver;
+  background-color: rgb(132, 192, 241);
+  flex-grow: 1;
+  color: aliceblue;
+  text-align: center;
+}
+.view-item{
+  border: 1px solid silver;
+  margin: 10rpx;
+  height: 200px;
+  text-align: center;
+}

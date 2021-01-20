@@ -1,0 +1,71 @@
+<!--components/popup.wxml-->
+<!--维修预约的弹窗界面-->
+<view class="wx-popup" hidden="{{flag}}">
+  <view class='popup-container'>
+
+    <view class="wx-popup-title">
+      <view style="display:flex;height=300rpx;flex-gorw:1;width:565rpx">
+        <view class="ibox">综合</view>
+        <view class="ibox">价格</view>
+        <view class="ibox">距离</view>
+        <view class="ibox">评价</view>
+      </view>
+    </view>
+
+    <view class="box">
+      <view style="display:flex;flex-direction:column;height:750rpx;text-align:center;">
+
+        <view style="display:flex;height:250rpx;">
+          <image style="height:220rpx;margin:4rpx;width:220rpx" src="/image/v3.png"></image>
+          <view
+            style="display:flex;flex-direction:column;height:250rpx;width:300rpx;flex-gorw:1;text-align:left;margin:10rpx">
+            <view style="height:73rpx ">商店：</view>
+            <view style="height:73rpx">评分：</view>
+            <view style="height:73rpx">总订单数：</view>
+          </view>
+          <view style="display:flex;flex-direction:column;height:250rpx;margin:10rpx;">
+            <icon style="height:73rpx" type="waiting"></icon>
+            <icon style="height:73rpx" type="waiting"></icon>
+            <icon style="height:73rpx" type="waiting"></icon>
+          </view>
+        </view>
+
+        <view style="display:flex;height:250rpx;">
+          <image style="height:220rpx;margin:4rpx;width:220rpx" src="/image/v3.png"></image>
+          <view
+            style="display:flex;flex-direction:column;height:250rpx;width:300rpx;flex-gorw:1;text-align:left;margin:10rpx">
+            <view style="height:73rpx ">商店：</view>
+            <view style="height:73rpx">评分：</view>
+            <view style="height:73rpx">总订单数：</view>
+          </view>
+          <view style="display:flex;flex-direction:column;height:250rpx;margin:10rpx;">
+            <icon style="height:73rpx" type="waiting"></icon>
+            <icon style="height:73rpx" type="waiting"></icon>
+            <icon style="height:73rpx" type="waiting"></icon>
+          </view>
+        </view>
+
+        <view style="display:flex;height:250rpx;">
+          <image style="height:220rpx;margin:4rpx;width:220rpx" src="/image/v3.png"></image>
+          <view
+            style="display:flex;flex-direction:column;height:250rpx;width:300rpx;flex-gorw:1;text-align:left;margin:10rpx">
+            <view style="height:73rpx ">商店：</view>
+            <view style="height:73rpx">评分：</view>
+            <view style="height:73rpx">总订单数：</view>
+          </view>
+          <view style="display:flex;flex-direction:column;height:250rpx;margin:10rpx;">
+            <icon style="height:73rpx" type="waiting"></icon>
+            <icon style="height:73rpx" type="waiting"></icon>
+            <icon style="height:73rpx" type="waiting"></icon>
+          </view>
+
+        </view>
+      </view>
+    </view>
+
+    <view class="wx-popup-btn">
+      <text class="btn-ok" bindtap='_success'>{{btn_ok}}</text>
+    </view>
+  </view>
+
+</view>

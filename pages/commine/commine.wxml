@@ -1,0 +1,92 @@
+<!--pages/commun/commun.wxml-->
+<view class="{{hasUserInfo?'header_view_hide':'header_view_show'}}">
+  <view>提示：请从首页完成授权</view>
+</view>
+<!--页面主体-->
+<view class="{{hasUserInfo?'header_view_show':'header_view_hide'}}">
+  <view class="containsView">
+    <scroll-view scroll-y="true">
+     
+
+      <!-- 以下为数据-->
+      <view wx:for="{{comlist}}" class="coms">
+        <view class="com-boxs" bindtap="{{item.bindurl}}">
+          <!--发布者信息-->
+          <view class="user-box">
+            <image class="user-img" src="{{item.pub_user_img}}"></image>
+            <view class="user-text">
+              <view>{{item.pub_user}} </view>
+              <view>{{item.publishTime}}</view>
+            </view>
+          </view>
+          <!--消息描述-->
+          <view class="ser-dec com-box">
+            <view>信息类型：{{item.communityKind}}</view>
+            <view>{{item.communityDescription}}</view>
+            <!--案例图片-->
+            <view class="{{item.showpic?'header_view_show':'header_view_hide'}}">
+              <view class="image_content">
+                <view class="images" wx:for="{{item.com_img}}">
+                  <image class="com-img" src="{{item.comImage}}" mode='scaleToFill'> </image>
+                  <!--mode 的合法值   scaleToFill	缩放模式，不保持纵横比缩放图片，使图片的宽高完全拉伸至填满 image 元素	
+              aspectFit	缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出-->
+                </view>
+              </view>
+            </view>
+            <view class="{{item.showpic?'header_view_hide':'header_view_show'}}">
+              <view class="com-dec com-value remind" bindtap="showitempic" data-communityId="{{item.communityId}}">
+                点击此处展示图片 </view>
+            </view>
+          </view>
+          <!-- 底部信息及按钮 -->
+          <view class="bottomStyle">
+            <view class="tool">
+              <!--点赞-->
+              <view class="tool-item" bindtap="bindlike" data-communityId="{{item.communityId}}">
+                <image src="../../image/like.png" wx:if="{{item.like}}" data-value="{{true}}">
+                </image>
+                <image src="../../image/unlike.png" wx:if="{{!item.like}}" data-value="{{false}}">
+                </image>
+                <text>点赞</text>
+              </view>
+              <!--评论-->
+              <view class="tool-item comment" bindtap="bindcomment" data-communityId="{{item.communityId}}">
+                <image src="../../image/comment.png"></image>
+                <text>评论</text>
+              </view>
+              <!--收藏-->
+              <view class="tool-item" bindtap="bindcollect" data-communityId="{{item.communityId}}">
+                <image src="../../image/collect.png" wx:if="{{item.collect}}" data-value="{{true}}">
+                </image>
+                <image src="../../image/uncollect.png" wx:if="{{!item.collect}}" data-value="{{false}}">
+                </image>
+                <text>收藏</text>
+              </view>
+
+            </view>
+          </view>
+          <!--底部评论输入框-->
+          <view class="{{item.cancomment?'header_view_show':'header_view_hide'}}">
+            <view class="commun_comment">
+              <input placeholder="请输入您要评论的内容...." bindinput="commentcontentInput"
+                data-communityId="{{item.communityId}}"></input>
+              <button class="comment_button" bindtap="tocomment" data-communityId="{{item.communityId}}">评论</button>
+            </view>
+          </view>
+          <!--评论展示区-->
+          <view class="{{item.hascomment?'header_view_show':'header_view_hide'}}">
+          <view class="comments" wx:for="{{item.comments}}">
+            <view class="comment_user">{{item.comment_user}}</view>
+            <view>:</view>
+            <view class="comment_text">{{item.comment_text}}</view>
+          </view>
+          </view>
+
+        </view>
+      </view>
+
+
+    </scroll-view>
+  </view>
+  <view style="color:#a3a3a3; text-align:center;margin:300px,0;">没有更多信息了，您可以去其他地方逛逛哦</view>
+</view>

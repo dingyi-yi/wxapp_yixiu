@@ -1,0 +1,99 @@
+<!--index.wxml-->
+<!--授权按钮-->
+<view class="{{hasUserInfo?'header_view_hide':'header_view_show'}}">
+  <button class="button" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录</button>
+<view wx:else>请升级微信版本</view>
+</view>
+<!--页面主体-->
+<view class="{{hasUserInfo?'header_view_show':'header_view_hide'}}">
+  <!--顾客-->
+  <view class="{{isuser?'header_view_show':'header_view_hide'}}">
+
+    <view class="caidan">
+      <view style="display:flex;height:500rpx;text-align:center;">
+        <view style="width:500rpx;line-height:300rpx;">
+          <image src="../../image/index.jpg" style="height:500rpx;width:500rpx"> </image>
+        </view>
+        <view style="display:flex;flex-direction:column;line-height:250rpx;">
+          <view style="height:250rpx;width:200rpx;">
+            <image src="../../image/order_pub.jpg" style="height:250rpx;width:210rpx" bindtap='navitoord'> </image>
+          </view>
+          <view style="height:250rpx;width:200rpx;">
+            <image src="../../image/act_look.jpg" style="height:250rpx;width:210rpx" bindtap='navitoactl'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--商家-->
+  <view class="{{isuser?'header_view_hide':'header_view_show'}}">
+
+    <view class="caidan">
+      <view style="display:flex;height:500rpx;text-align:center;">
+        <view style="width:500rpx;line-height:300rpx;">
+          <image src="../../image/index.jpg" style="height:500rpx;width:500rpx">
+          </image>
+        </view>
+        <view style="display:flex;flex-direction:column;line-height:250rpx;">
+          <view style="height:250rpx;width:200rpx;">
+            <image src="../../image/order_rec.jpg" style="height:250rpx;width:210rpx" bindtap='navitorec'>
+            </image>
+          </view>
+          <view style="height:250rpx;width:200rpx;">
+            <image src="../../image/act_pub.jpg" style="height:250rpx;width:210rpx" bindtap="navitoact"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--轮播图-->
+  <swiper class="view-item" indicator-dots="true" autoplay="true" circular="ture">
+    <swiper-item>
+      <view>
+        <image src="{{v1Src}}" alt="error"></image>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view>
+        <image src="{{v2Src}}" alt="error"></image>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view>
+        <image src="{{v3Src}}" alt="error"></image>
+      </view>
+    </swiper-item>
+  </swiper>
+<!--
+  <view class="texts1">你可能喜欢</view>
+
+  <!--左右布局
+  <view style="display:flex;text-align:left;flex-gorw:1;">
+    <view class="ibox">猜你喜欢</view>
+    <view class="ibox">百科知识</view>
+    <view class="ibox">你问我答</view>
+  </view>
+
+  <!--上下布局
+  <view style="display:flex;flex-direction:column;text-align:center;margin:10rpx">
+    <view style="flex-gorw:1">
+      <image src="{{v4Src}}" style="height:350rpx;width:700rpx"></image>
+    </view>
+    <view style="flex-gorw:">
+      <image src="{{v4Src}}" style="height:350rpx;width:700rpx"></image>
+    </view>
+    <view style="flex-gorw:">
+      <image src="{{v4Src}}" style="height:350rpx;width:700rpx"></image>
+    </view>
+    <view style="flex-gorw:">
+      <image src="{{v4Src}}" style="height:350rpx;width:700rpx"></image>
+    </view>
+    <view style="flex-gorw:">
+      <image src="{{v4Src}}" style="height:350rpx;width:700rpx"></image>
+    </view>
+  </view>
+<view bindtap="navitorepb">aaa</view>
+<view bindtap="navitoactl">bbb</view>-->
+</view>

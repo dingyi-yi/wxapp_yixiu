@@ -1,0 +1,39 @@
+<!--pages/act_look/act_look.wxml-->
+<!--以下为数据-->
+<view wx:for="{{actlist}}" class="acts">
+  <view class="act-boxs" bindtap="{{item.bindurl}}">
+
+    <view class="user-box">
+      <image class="user-img" src="{{item.pub_user_img}}"></image>
+      <!--用户信息-->
+      <view class="user-text">
+        <view>{{item.pub_user}} </view>
+      </view>
+    </view>
+    <!--案例概述-->
+    <view class="case-box">
+      <view class="case-value">
+        <view>活动名称：{{item.activeName}}</view>
+        <view>活动地址: {{item.activityAdress}}</view>
+        <view>开始时间：{{item.startTime}}</view>
+        <view>结束时间：{{item.endTime}}</view>
+      </view>
+      <!--案例描述-->
+      <view class="case-value">
+        <view>活动描述：{{item.activeDescription}}</view>
+        <!--案例图片-->
+        <view class="{{item.hasimg?'header_view_show':'header_view_hide'}} image_box">
+          <view class="images" wx:for="{{item.act_img}}">
+            <image class="act-img" src="{{item.actImage}}" mode='scaleToFill'> </image>
+            <!--mode 的合法值
+             scaleToFill	缩放模式，不保持纵横比缩放图片，使图片的宽高完全拉伸至填满 image 元素	
+              aspectFit	缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出-->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view style="color:#a3a3a3; text-align:center;margin:300px,0;">没有更多活动了，快去发布更多吧</view>

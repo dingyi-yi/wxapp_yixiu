@@ -1,0 +1,109 @@
+/* pages/com_pub/com_pub.wxss */
+
+
+  .div{
+    height: 100px;
+    width: 500px;
+    border: 1px solid #5a6268;
+    padding: 0 8px;
+    overflow: hidden;
+  
+  }
+  .text{
+
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 18px;
+    padding: 5px;
+    height:350rpx;
+    border: 1px solid silver;
+  }
+   
+  .image{
+    width:31%;
+    height: 100px;
+    padding: 2px
+  }
+   
+  .moment_img{
+    width: 98px;
+    height: 98px;
+  }
+   
+  .image_content{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px
+  }
+  .button{
+    background-color: #1296db;
+    width: 80%;
+    margin-top: 20rpx;
+    /*position: fixed;*/
+    color: white;
+    border-radius: 98rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+   /* 顶部 */
+   .top{
+    width: 100vw;
+    height: 80rpx;
+    padding: 0 20rpx;
+    line-height: 80rpx;
+    font-size: 34rpx;
+    border-bottom: 1px solid gray;
+   }
+  
+   /* 下拉框 */
+   .top-selected{
+     width: 100%;
+     display: flex;
+     float: right;
+     align-items: center;
+     justify-content: space-between;
+     border: 1px solid #ccc;
+     padding: 0 10rpx;
+     font-size: 15px;
+  
+   }
+   /* 下拉内容 */
+   .select_box {
+     background-color: #fff;
+     padding: 0 20rpx;
+     width: 100%;
+     float: right;
+     position: relative;
+     right: 0;
+     z-index: 1;
+     overflow: hidden;
+     text-align: left;
+     animation: myfirst 0.5s;
+     font-size: 15px;
+   }
+   .select_one {
+     padding-left: 20rpx;
+     width: 100%;
+     height: 60rpx;
+     position: relative;
+     line-height: 60rpx;
+     border-bottom: 1px solid #ccc;
+     margin-left: 10px;
+   }
+   /* 下拉过度效果 */
+   @keyframes myfirst {
+     from {
+       height: 0rpx;
+     }
+     
+     to {
+       height: 210rpx;
+     }
+   }
+   /* 下拉图标 */
+   .top-selected image{
+    flex:1;
+   }

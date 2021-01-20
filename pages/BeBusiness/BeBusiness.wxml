@@ -1,0 +1,26 @@
+<!--pages/BeBusiness/BeBusiness.wxml-->
+<form bindsubmit="formSubmit">
+  <view class="infomation">
+    <view class="weui-cells__title">商店名称：</view>
+    <input class="weui-input" bindinput="bNameInput" placeholder="请输入商店名称" />
+    <view class="weui-cells__title"  bindtap="getLocation">商铺地址：</view>
+   <text class="weui-input"bindtap="getLocation">{{address}}</text>
+   <view class="weui-cells__title">单位法人代表：</view>
+    <input class="weui-input" bindinput="LegalRepreInput" placeholder="请输入商铺法人姓名" />
+   <view class="weui-cells__title">公司性质：</view>
+    <input class="weui-input" bindinput="shipInput"  placeholder="请输入公司性质" />
+    <view class="weui-cells__title">许可证编号：</view>
+    <input class="weui-input" bindinput="LicenseNoInput" type="number" placeholder="请输入您的许可证ID" />
+    <view class="weui-cells__title">特约品牌：</view>
+    <input class="weui-input" bindinput="specialBrandInput"  placeholder="请输入商店特约维修品牌（没有可写无）" />
+    <view class="weui-cells__title">核准维修范围：</view>
+    <input class="weui-input"  bindinput="scopeInput"  placeholder="请输入家电维修范围" />
+    <view class="weui-cells__title">其他备注：</view>
+    <input class="weui-input" bindinput="remarksInput"   placeholder="请输入与其他备注，（可以输入无）" />
+  </view>
+  <view class="tobus" style="color:#a3a3a3; text-align:center;margin:300px,0;">注意：认证成为商家后，您的平台数据将被清除（包括平台金币等）</view>
+
+  <view class="" style="padding:10px 15px;background:#f5f5f5">
+    <button class='button' bindtap="send">商家认证</button>
+  </view>
+</form>

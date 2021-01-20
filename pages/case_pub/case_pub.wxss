@@ -1,0 +1,52 @@
+/* pages/case_pub/case_pub.wxss */
+/* pages/case_pub/case_pub.wxss */
+.box {
+  /*display: flex;*/
+  border: 1px solid silver;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  padding-left: 5rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.box-1 {
+  /*display: flex;*/
+  border: 1px solid silver;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  padding-left: 5rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  height: 300rpx;
+}
+
+.image {
+  width: 31%;
+  height: 100px;
+  padding: 2px
+}
+
+.moment_img {
+  width: 98px;
+  height: 98px;
+}
+
+.image_content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px
+}
+
+.button {
+  background-color: #1296db;
+  width: 80%;
+  margin-top: 20rpx;
+  color: white;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

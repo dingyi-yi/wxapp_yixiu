@@ -1,0 +1,33 @@
+<!--pages/case_pub/case_pub.wxml-->
+<!--pages/case_pub/case_pub.wxml-->
+<view>
+  
+  <view class="box">
+    <input placeholder="家电类型"  bindinput="AppliancesTypeInput"></input>
+  </view>
+  <!--<view class="box">
+    <input placeholder="维修时间"  bindinput="MaintenanceTimeInput"></input>
+  </view>-->
+  <view class="box">
+    <input placeholder="维修的企业名称"  bindinput="MaintenanceCompanyInput"></input>
+  </view>
+  <view class="box">
+    <input placeholder="维修价格" type="number" bindinput="PriceInput"></input>
+  </view>
+  <view class="box-1">
+    <textarea placeholder="案例描述(您可以在此处详细描述您的维修经历，包括您的家电故障、商家给出的维修方案等，维修过程体验等，您分享的案例将给其他人提供重要的参考价值）" bindinput="CaseDescriptionInput"></textarea>
+  </view>
+  <!--图片-->
+  <view class="image_content">
+    <view class='image' wx:for="{{img_url}}">
+      <image class="moment_img" src='{{item}}' bindlongpress="deleteImage" bindtap="listenerButtonPreviewImage"
+        data-index="{{index}}" mode='widthFix' />
+    </view>
+    <view class='image' style='display:{{hideAdd?"none":"block"}}'>
+      <image bindtap="chooseimage" class="moment_img" src='../../image/pic.png'></image>
+    </view>
+  </view>
+  <!--发布按钮-->
+  <button class='button' bindtap="send">发布</button>
+</view>
+

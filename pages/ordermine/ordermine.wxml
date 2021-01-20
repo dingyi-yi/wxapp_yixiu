@@ -1,0 +1,125 @@
+<!--pages/order_rec/order_rec.wxml-->
+
+<!--接单时弹窗-->
+<modal id="modal" hidden="{{hiddenmodalput}}" title="接单信息" confirm - text="提交" cancel - text="取消" bindcancel="cancel"
+  bindconfirm="confirm">
+  <text>维修价格预估:</text>
+  <view class="modalinput">{{acceptprice}}</view>
+  <text>维修方案描述:</text>
+  <view class="modalinput">{{acceptdescribe}}</view>
+</modal>
+
+<view style="display:flex;text-align:left;flex-gorw:1;height:30px;">
+  <view class="{{ischoosea?'choosed':'unchoosed'}} ibox" bindtap="choosea">交易中</view>
+  <view class="{{ischoosea?'unchoosed':'choosed'}} ibox" bindtap="chooseb">订单完成</view>
+</view>
+
+<view wx:for="{{nowlist}}" class="orders">
+  <view class="order-boxs" bindtap="{{item.bindurl}}">
+
+    <!--发布者信息-->
+    <view class="user-box">
+      <image class="user-img" src="{{item.pub_user_img}}"></image>
+      <view class="user-text">
+        <view>{{item.pub_user}} </view>
+        <view>{{item.time_publish}}</view>
+      </view>
+    </view>
+    <!--订单信息-->
+    <view class="order-box">
+      <view class="ser-dec order-key">订单描述</view>
+      <view class="ser-dec order-value">
+        <view>家电种类：{{item.applian_cate}}</view>
+        <!-- <view>服务类型：{{item.service_cate}}</view>  -->
+        <view>维修地址：{{item.service_place}}</view>
+        <!--<view>维修时间：{{item.service_time}}</view>-->
+      </view>
+    </view>
+    <!--故障描述-->
+    <view class="order-box">
+      <view class="fault-dec order-key">故障描述</view>
+      <view class="fault-dec order-value">
+        <view>{{item.fault_text}}</view>
+
+        <view class="{{item.showpic?'header_view_show':'header_view_hide'}}">
+          <view class="image_content">
+            <view class="image" wx:for="{{item.fault_img}}">
+              <image class="order-img" src="{{item.orderImage}}" mode='scaleToFill'> </image>
+              <!--mode 的合法值
+             scaleToFill	缩放模式，不保持纵横比缩放图片，使图片的宽高完全拉伸至填满 image 元素	
+              aspectFit	缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出-->
+            </view>
+          </view>
+        </view>
+        <view class="{{item.showpic?'header_view_hide':'header_view_show'}}">
+          <view class="fault-dec order-value remind" bindtap="showitempic" data-orderid="{{item.orderid}}">点击此处展示图片
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!--接单状态-->
+
+    <view class="order-box">
+      <view class="order-state order-key">接单状态</view>
+      <!--先考虑交易未完成-->
+      <view class="{{item.type?'header_view_hide':'header_view_show'}}">
+        <!--以下为商家-->
+        <view class="{{isuser?'header_view_hide':'header_view_show'}}">
+          <view class="{{item.acceptmine?'header_view_show':'header_view_hide'}}"
+            style="padding:10px 15px;background:#f5f5f5">
+            <!--已接单-->
+            <button type="dafault" bindtap="showmodal" data-orderid="{{item.orderid}}"
+              data-state="{{item.acceptmine}}">已接单</button>
+          </view>
+        </view>
+        <!--以下为用户-->
+        <view class="{{isuser?'header_view_show':'header_view_hide'}}">
+          <!--无人接单-->
+          <view class="{{item.berecd?'header_view_hide':'header_view_show'}}">暂时无人接单</view>
+          <!--已接单-->
+          <view class="{{item.berecd?'header_view_show':'header_view_hide'}}">
+            <view wx:for="{{item.takeOrderCompanyList}}" class="choose_bus_box">
+              <view style="color:bule;" bindtap="showmorebus" data-item="{{item.takeOrder}}">
+                {{item.comQualification.bName}}</view>
+              <button class="choose_bus_btn" style="width:200rpx;margin-left: 80rpx;" bindtap="choosebus"
+                data-openid="{{item.comQualification.openId}}" data-item="{{item.takeOrder}}"
+                data-orderid="{{item.takeOrder.orderId}}">选择</button>
+            </view>
+          </view>
+
+        </view>
+      </view>
+      <!--再考虑订单已完成-->
+      <view class="{{item.type?'header_view_show':'header_view_hide'}}">
+        <!--
+        <view style="color:bule;" bindtap="showmorebus" data-item="{{item.takeOrderCompanyList[0].takeOrder}}">
+          {{item.takeOrderCompanyList[0].comQualification.bName}}</view>-->
+        <view style="color:bule;">交易完成 </view>
+        <view style="color:bule;" bindtap="showmorebus" data-item="{{item.finnaltakeOrderCompany}}">
+          {{item.finnaltakeOrderCompany.comQualification.bName}}</view>
+      </view>
+    </view>
+
+    <!--评价-->
+
+    <!--仅当交易完成时展示-->
+    <view class="{{item.type?'header_view_show2':'header_view_hide'}}">
+      <view class="order-box">
+        <view class="order-evalu order-key">评价状态</view>
+        <view class="order-value" bindtap="navitoeva" data-orderid="{{item.orderid}}">
+          <view class="{{item.evaluation?'header_view_hide':'header_view_show'}}">
+            <view bindtap="navitoeva" data-orderid="{{item.orderid}}" data-eva="{{item.evaluation}}">点击此处进行评价</view>
+          </view>
+          <view class="{{item.evaluation?'header_view_show2':'header_view_hide'}}">
+            <view bindtap="navitoeva" data-orderid="{{item.orderid}}" data-eva="{{item.evaluation}}">点击此处查看评价</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+
+<view style=" color:#a3a3a3; text-align:center;margin:300px,0;">没有更多订单了，您可以去社区逛逛哦</view>

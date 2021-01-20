@@ -1,0 +1,74 @@
+<!--pages/evalu_pub/evalu_pub.wxml-->
+
+<!--未评价时在这个界面进行评价-->
+<view class="{{haseva?'header_view_hide':'header_view_show'}}">
+  <!--文本框-->
+  <view class="box-1">
+    <textarea placeholder="详细评价" bindinput="evatextinput"></textarea>
+  </view>
+  <!--评分功能-->
+  <view class="view_page" style="margin-top: 30rpx;">
+    <view class="content_cls">
+
+      <view class="cross_column">
+        <label>服务态度：</label>
+        <image class="imagecls" wx:for="{{5}}" wx:key="{{index}}" data-name="service" data-item="{{item}}"
+          src="{{item-service+1>0?'/image/eva.png':'/image/eva2.png'}}" bindtap="img_bind"></image>
+      </view>
+      <view class="cross_column">
+        <label>维修质量：</label>
+        <image class="imagecls" wx:for="{{5}}" wx:key="{{index}}" data-name="quality" data-item="{{item}}"
+          src="{{item-quality+1>0?'/image/eva.png':'/image/eva2.png'}}" bindtap="img_bind"></image>
+      </view>
+      <view class="cross_column">
+        <label>维修时间：</label>
+        <image class="imagecls" wx:for="{{5}}" wx:key="{{index}}" data-name="repairtime" data-item="{{item}}"
+          src="{{item-repairtime+1>0?'/image/eva.png':'/image/eva2.png'}}" bindtap="img_bind"></image>
+      </view>
+      <view class="cross_column">
+        <label>总体评价：</label>
+        <image class="imagecls" wx:for="{{5}}" wx:key="{{index}}" data-name="total" data-item="{{item}}"
+          src="{{item-total+1>0?'/image/eva.png':'/image/eva2.png'}}" bindtap="img_bind"></image>
+      </view>
+
+    </view>
+  </view>
+  <button class='button' bindtap="send">发布</button>
+</view>
+
+
+<view class="{{haseva?'header_view_show':'header_view_hide'}}">
+  <!--有评价时展示评价-->
+  <!--文本框-->
+  <view class="box-1">
+    <view>详细评价:</view>
+    <view>{{evatext}}</view>
+  </view>
+  <!--评分功能-->
+  <view class="view_page" style="margin-top: 30rpx;">
+    <view class="content_cls">
+
+      <view class="cross_column">
+        <label>服务态度：</label>
+        <image class="imagecls" wx:for="{{5}}" wx:key="{{index}}" data-name="service" data-item="{{item}}"
+          src="{{item-service+1>0?'/image/eva.png':'/image/eva2.png'}}" ></image>
+      </view>
+      <view class="cross_column">
+        <label>维修质量：</label>
+        <image class="imagecls" wx:for="{{5}}" wx:key="{{index}}" data-name="quality" data-item="{{item}}"
+          src="{{item-quality+1>0?'/image/eva.png':'/image/eva2.png'}}" ></image>
+      </view>
+      <view class="cross_column">
+        <label>维修时间：</label>
+        <image class="imagecls" wx:for="{{5}}" wx:key="{{index}}" data-name="repairtime" data-item="{{item}}"
+          src="{{item-repairtime+1>0?'/image/eva.png':'/image/eva2.png'}}" ></image>
+      </view>
+      <view class="cross_column">
+        <label>总体评价：</label>
+        <image class="imagecls" wx:for="{{5}}" wx:key="{{index}}" data-name="total" data-item="{{item}}"
+          src="{{item-total+1>0?'/image/eva.png':'/image/eva2.png'}}" ></image>
+      </view>
+
+    </view>
+  </view>
+</view>

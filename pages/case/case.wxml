@@ -1,0 +1,80 @@
+<!--pages/case/case.wxml-->
+<view class="{{hasUserInfo?'header_view_hide':'header_view_show'}}">
+  <view>提示：请从首页完成授权</view>
+</view>
+<!--页面主体-->
+<view class="{{hasUserInfo?'header_view_show':'header_view_hide'}}">
+  <view class="containsView">
+    <scroll-view scroll-y="true">
+      <!--顶部搜索框-->
+      <view class="headerView">
+        <view class="case_search">
+          <input placeholder="请输入您要搜索家电种类..."    bindinput="searchcontentInput"></input>
+          <button class="search_button" bindtap="tosearch" >搜索</button>
+        </view>
+        <image class="case_public" bindtap="navitocompub" src="../../image/public.png"></image>
+      </view>
+      <!-- 顶部view样式 -->
+      <!--<view class="headerView">
+      <view class="headerItemView">
+        <text class="headerItemText">综合</text>
+      </view>
+      <view class="headerItemView">
+        <text class="headerItemText">信用</text>
+      </view>
+      <view class="headerItemView">
+        <text class="headerItemText">时间</text>
+      </view>
+      <view class="headerItemView">
+        <text class="headerItemText">筛选</text>
+      </view>
+    </view>-->
+      <!--以下为数据-->
+
+      <view wx:for="{{caselist}}" class="cases">
+        <view class="case-boxs" bindtap="{{item.bindurl}}">
+
+          <view class="user-box">
+            <image class="user-img" src="{{item.pub_user_img}}"></image>
+            <view class="user-text">
+              <view>{{item.pub_user}} </view>
+              <view>{{item.publishTime}}</view>
+            </view>
+          </view>
+          <!--案例概述-->
+          <view class="case-box">
+            <view class="ser-dec case-key">案例概括</view>
+            <view class="ser-dec case-value">
+              <view>家电种类：{{item.appliancesType}}</view>
+              <view>维修商家：{{item.maintenanceCompany}}</view>
+              <view>维修价格：{{item.price}}元</view>
+            </view>
+          </view>
+          <!--案例描述-->
+          <view class="case-box">
+            <view class="ser-dec case-key">案例描述</view>
+            <view class="case-dec case-value">
+              <view>{{item.caseDescription}}</view>
+              <!--案例图片-->
+              <view class="{{item.showpic?'header_view_show':'header_view_hide'}}">
+                <view class="image_content">
+                  <view class="image" wx:for="{{item.case_img}}">
+                    <image class="case-img" src="{{item.caseImage}}" mode='scaleToFill'> </image>
+                    <!--mode 的合法值
+             scaleToFill	缩放模式，不保持纵横比缩放图片，使图片的宽高完全拉伸至填满 image 元素	
+              aspectFit	缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出-->
+                  </view>
+                </view>
+              </view>
+              <view class="{{item.showpic?'header_view_hide':'header_view_show'}}">
+                <view class="case-dec case-value remind" bindtap="showitempic" data-caseId="{{item.caseId}}">
+                  点击此处展示图片 </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view style="color:#a3a3a3; text-align:center;margin:300px,0;">没有更多案例了，您可以去社区逛逛哦</view>
+</view>

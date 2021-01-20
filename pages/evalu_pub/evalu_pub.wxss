@@ -1,0 +1,111 @@
+/* pages/evalu_pub/evalu_pub.wxss */
+.order-img{
+  height:40px;
+  max-width:40px;
+}
+
+.order-boxs{
+   /* display: flex;*/
+    padding: 27rpx;
+    box-sizing: border-box;
+    border: 1.5px solid #b0b6bb; 
+    border-spacing: 100ch;
+    border-color: #1296db;
+    border-radius: 20px;  
+    margin:10rpx;
+   
+}
+.user-box {
+  width: 100%;
+  display: flex;
+
+}
+.user-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.user-text {
+  color: #000;
+  font-size: 20px;
+  flex-direction: column;
+  justify-content: center;
+}
+.order-box{
+  display:flex;
+  height:auto;
+  flex: 1;
+}
+.order-key{
+  height:auto;
+  margin:10rpx;
+  width:110rpx;
+  font-size: 20px;
+  border-right: 1px solid #ccc;
+}
+.order-value{
+  font-size:18px;
+  display:flex;
+  flex-direction:column;
+  height:auto;
+  width:500rpx;
+  flex-grow:1;
+  text-align:left;
+  margin:10rpx;
+  font-size:18px;
+}
+.box-1{
+  /*display: flex;*/
+  border: 1px solid silver;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  padding-left: 5rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  height: 300rpx;
+  margin-top: 15px;
+}
+
+.button{
+  background-color: #1296db;
+  width: 80%;
+  margin-top: 20rpx;
+  color: white;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.cross_column {
+  display: flex;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+/* img图片样式 */
+.imagecls {
+  width: 50rpx;
+  height: 50rpx;
+  
+  
+}
+
+/*报修评价内容样式 */
+
+.content_cls {
+
+  margin-left: 20px;
+  background-color: white;
+}
+.content_cls view{
+  margin-bottom: 50rpx;
+}
+.header_view_hide{
+  display: none;
+}
+.header_view_show{
+  display: block;
+}

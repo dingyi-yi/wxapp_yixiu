@@ -1,0 +1,46 @@
+<!--pages/act_pub/act_pub.wxml-->
+
+<view>
+
+  <view class="box">
+    <input placeholder="活动名称" bindinput="ActiveNameInput"></input>
+  </view>
+  <!--开始时间选择器-->
+  <view class="section box">
+  <picker mode="date" value="{{StartTime}}" start="1970-01-01" end="2050-12-31" bindchange="bindDateChange1">
+    <view class="picker">
+      开始时间: {{StartTime}}
+    </view>
+  </picker>
+</view>
+<!--结束时间选择器-->
+<view class="section box">
+  <picker mode="date" start="1970-01-01" end="2050-12-31" bindchange="bindDateChange2">
+    <view class="picker">
+     结束时间: {{EndTime}}
+    </view>
+  </picker>
+</view>
+  <!--<view class="box">
+    <input placeholder="活动开始时间" bindinput="StartTimeInput"></input>
+  </view>
+  <view class="box">
+    <input placeholder="活动结束时间" bindinput="EndTimeInput"></input>
+  </view>-->
+  
+  <view class="box-1">
+    <textarea placeholder="活动详情描述" bindinput="ActiveDescriptionInput"></textarea>
+  </view>
+
+  <view class="image_content">
+    <view class='image' wx:for="{{img_url}}">
+      <image class="moment_img" src='{{item}}' bindlongpress="deleteImage" bindtap="listenerButtonPreviewImage"
+        data-index="{{index}}" mode='widthFix' />
+    </view>
+    <view class='image' style='display:{{hideAdd?"none":"block"}}'>
+      <image bindtap="chooseimage" class="moment_img" src='../../image/pic.png'></image>
+    </view>
+  </view>
+  <!--发布按钮-->
+  <button class='button' bindtap="send">发布</button>
+</view>

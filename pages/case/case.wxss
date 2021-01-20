@@ -1,0 +1,137 @@
+/* pages/case/case.wxss */
+.header_view_hide{
+  display: none;
+}
+.header_view_show{
+  display: block;
+}
+.case_search {
+  display: flex;
+  border: 2px solid #1296db;
+  border-radius: 5px;
+  background: transparent;
+  border-radius: 10px 10px 10px 10px;
+  margin-left: 3px;
+  height: 80rpx;
+  width: 600rpx;
+  top: 0;
+  right: 0;
+}
+
+.case_search input {
+  flex: 12;
+  border-radius: 5px;
+  background: transparent;
+  border-radius: 0px 10px 10px 0px;
+  height: 80rpx;
+}
+
+.search_button {
+  background: #1296db;
+  display: flex;
+  width: 80px;
+  flex: 0;
+  border-radius: 0px 10px 10px 0px;
+  height: 80rpx;
+  font-size: 15px;
+  color: #FFFFFF;
+  text-align: center;
+  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.case_public {
+  flex: 1;
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 10rpx;
+}
+
+.headerView {
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.case-boxs{
+  /* display: flex;*/
+   padding: 27rpx;
+   box-sizing: border-box;
+   border: 1.5px solid #b0b6bb; 
+   border-spacing: 100ch;
+   border-color: #1296db;
+   border-radius: 20px;  
+   margin:10rpx;
+  
+}
+
+.user-box {
+ width: 100%;
+ display: flex;
+
+}
+.user-img {
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+}
+.user-text {
+ color: #000;
+ font-size: 20px;
+ flex-direction: column;
+ justify-content: center;
+}
+.case-box{
+ display:flex;
+ height:auto;
+ flex: 1;
+}
+.case-key{
+ height:auto;
+ margin:10rpx;
+ width:110rpx;
+ font-size: 20px;
+ border-right: 1px solid #ccc;
+}
+.case-value{
+ font-size:18px;
+ display:flex;
+ flex-direction:column;
+ height:auto;
+ width:500rpx;
+ flex-grow:1;
+ text-align:left;
+ margin:10rpx;
+ font-size:18px;
+}
+.header_view_hide{
+ display: none;
+}
+.header_view_show{
+ display: block;
+}
+.remind{
+ color:#1f1f1f;
+ font-size:14px;
+
+}
+.image{
+ width:31%;
+ height: 130rpx;
+ padding: 5rpx
+}
+
+.case-img{
+ width: 130rpx;
+ height: 130rpx;
+}
+
+.image_content{
+ width: 100%;
+ display: flex;
+ flex-wrap: wrap;
+ margin-bottom: 20rpx
+}
